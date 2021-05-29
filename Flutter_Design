@@ -1,0 +1,98 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "BEIJING",
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                child: Center(
+                  child: Text('Monday 18:32'),
+                ),
+              ),
+              //new Image.asset('images/Sunny.png'),
+              new Image(
+                image: new AssetImage("assets/images/Sunny.png"),
+              ),
+              Text(
+                "24°C",
+                style: TextStyle(fontSize: 60, fontWeight: FontWeight.w800),
+              ),
+              Text("Sunny"),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                height: 120,
+                // color: Colors.white,
+                // alignment: Alignment.topRight,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Icon(
+                          Icons.wb_sunny,
+                        ),
+                        Text("Sunrise"),
+                        Text("6.00"),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Icon(
+                          Icons.air,
+                        ),
+                        Text("Wind"),
+                        Text("2m/s"),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Icon(
+                          Icons.thermostat_outlined,
+                        ),
+                        Text("Temperature"),
+                        Text("28°"),
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ));
+  }
+}
